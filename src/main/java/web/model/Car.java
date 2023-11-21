@@ -1,7 +1,7 @@
 package web.model;
 
 public class Car {
-    private String voice;
+    private String model;
     private String color;
     private int price;
 
@@ -9,17 +9,17 @@ public class Car {
     }
 
     public Car(String voice, String color, int price) {
-        this.voice = voice;
+        this.model = voice;
         this.color = color;
         this.price = price;
     }
 
     public String getVoice() {
-        return voice;
+        return model;
     }
 
     public void setVoice(String voice) {
-        this.voice = voice;
+        this.model = voice;
     }
 
     public String getColor() {
