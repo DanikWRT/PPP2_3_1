@@ -13,11 +13,11 @@ public class CarDaoImpl implements CarDao {
 
     {
         carList = new ArrayList<>();
-        carList.add(new Car("ВАЗ2101", "Yellow", 1000));
-        carList.add(new Car("Lexus GS300", "Blue", 30000));
-        carList.add(new Car("Toyota Cresta", "Red", 9000));
-        carList.add(new Car("Daewoo matiz", "Blue", 1200 ));
-        carList.add(new Car("Toyota Vista", "Pink", 3000 ));
+        carList.add(new Car("KIA", 2013));
+        carList.add(new Car("bajaj", 2023));
+        carList.add(new Car("Jarvus", 1997));
+        carList.add(new Car("TOYOTA", 1995));
+        carList.add(new Car("TOYOTA", 1995));
     }
 
 

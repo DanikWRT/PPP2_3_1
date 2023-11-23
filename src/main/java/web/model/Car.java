@@ -1,40 +1,68 @@
 package web.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "cars")
 public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "model")
     private String model;
-    private String color;
-    private int price;
 
-    public Car() {
+    @Column(name = "series")
+    private int series;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "car")
+    private User user;
+
+    public Car(String model, int series) {
+        this.model = model;
+        this.series = series;
     }
+    public Car() {}
 
-    public Car(String voice, String color, int price) {
-        this.model = voice;
-        this.color = color;
-        this.price = price;
-    }
-
-    public String getVoice() {
+    public String getModel() {
         return model;
     }
 
-    public void setVoice(String voice) {
-        this.model = voice;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getColor() {
-        return color;
+    public int getSeries() {
+        return series;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setSeries(int series) {
+        this.series = series;
     }
 
-    public int getPrice() {
-        return price;
+    public User getUser() {
+        return user;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+
+                '}';
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public User setUser(User user) {
+        this.user = user;
+        return user;
     }
 }
