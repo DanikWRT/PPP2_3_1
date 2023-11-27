@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>FILMS</title>
 </head>
 <body>
+<h2>Films</h2>
 <div>
     <th:block th:each="msg : ${messages}">
         <h1 th:text="${msg}"></h1>
     </th:block>
     <a href="/cars"> <h1>Автомобильный Прайс</h1> </a>
+    <a href="/films"> <h1>Фильмы</h1> </a>
+    <a href="/users"> <h1>Пользователи</h1> </a>
 </div>
 </body>
 </html>

@@ -1,11 +1,32 @@
 package web.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "films")
 public class Film {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name ="title")
     private String title;
+    @Column(name ="year")
     private int year;
+    @Column(name ="genre")
     private String genre;
+    @Column(name ="watched")
     private boolean watched;
+
+    public Film() {
+
+    }
+    public Film(int id, String title, int year, String genre, boolean watched) {
+        this.id = id;
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.watched = watched;
+    }
 
     public int getId() {
         return id;

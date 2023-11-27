@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <title>Изменить </title>
 </head>
 <body>
-
+<form action="#" th:action="@{/films/edit}" th:object="${film}" th:method="POST">
+    <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+    <p>Название: <input type="text" th:field="*{title}" th:value="*{title}" th:charset="utf-8"/></p>
+    <p>Год: <input type="text" th:field="*{year}" th:value="*{year}"/></p>
+    <p>Жанр: <input type="text" th:field="*{genre}" th:value="*{genre}" th:charset="utf-8"/></p>
+    <p>Просмотрен?: <input type="text" th:field="*{watched}" th:value="*{watched}" th:charset="utf-8"/></p>
+    <p><input type="submit" value="Изменить"/></p>
+</form>
+<td th:text="${film.id}"></td>
+<td th:text="${film.getTitle()}"></td>
+<td th:text="${film.getYear()}"></td>
+<td th:text="${film.getGenre()}"></td>
+<td th:text="${film.isWatched()}"></td>
 </body>
 </html>
